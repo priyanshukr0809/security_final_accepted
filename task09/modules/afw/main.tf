@@ -48,7 +48,7 @@ resource "azurerm_route" "default" {
 }
 
 resource "azurerm_route" "aks_lv" {
-  name                = "${local.default_route_name}-firewall-pip"
+  name                = local.firewall_pip_route_name
   resource_group_name = var.resource_group_name
   route_table_name    = azurerm_route_table.rt.name
   address_prefix      = "${azurerm_public_ip.firewall_pip.ip_address}/32"
