@@ -4,6 +4,7 @@ locals {
   route_table_name     = format("%s-rt", var.prefix)
   public_ip_name       = format("%s-pip", var.prefix)
   default_route_name   = format("%s-default-route", var.prefix)
+  firewall_pip_route_name = format("%s-firewall-pip", local.default_route_name)
 
   network_rules = [
     {
